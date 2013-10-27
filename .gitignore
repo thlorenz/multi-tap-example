@@ -1,0 +1,47 @@
+node_modules
+deps
+test/deps
+.DS_Store
+
+# Object files
+*.o
+*.ko
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Autconf generated/intermediate/required files
+Makefile
+Makefile.in
+autom4te.cache/
+autoscan.log
+config.log
+config.status
+configure
+config.*
+configure.*
+.deps/
+
+AUTHORS
+COPYING
+ChangeLog
+INSTALL
+NEWS
+README
+compile
+depcomp
+install-sh
+missing
+stamp-h

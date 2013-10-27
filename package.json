@@ -1,0 +1,29 @@
+{
+  "name": "multi-tap-example",
+  "version": "0.0.0",
+  "description": "Example of setting up a project to run multiple tap tests in one go or one by one.",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make check",
+    "postinstall": "clib install thlorenz/tap.c -o ./test/deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "thlorenz/multi-tap-example"
+  },
+  "keywords": [
+    "tap",
+    "C",
+    "automake",
+    "autoconf",
+    "autotools",
+    "example"
+  ],
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (http://thlorenz.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "clib": "~0.1.0"
+  }
+}
