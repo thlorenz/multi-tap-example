@@ -31,7 +31,7 @@ config.log
 config.status
 configure
 config.*
-configure.*
+configure
 .deps/
 
 AUTHORS
