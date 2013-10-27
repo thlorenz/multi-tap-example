@@ -25,6 +25,10 @@ Example of setting up a project to run multiple tap tests in one go or one by on
 
     make
 
+## Run program
+
+    ./src/multi-tap-main
+
 ## Run tests
 
     make check

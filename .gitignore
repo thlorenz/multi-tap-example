@@ -21,6 +21,8 @@ test/deps
 *.exe
 *.out
 *.app
+src/multi-tap-main
+
 
 # Autconf generated/intermediate/required files
 Makefile
