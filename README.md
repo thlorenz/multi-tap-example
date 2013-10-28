@@ -31,12 +31,14 @@ Example of setting up a project to run multiple tap tests in one go or one by on
     make check
 
 ### Run one test only
+
+Two options to archieve that:
     
-#### Change testcases in Mainfile.am
+#### a) Change testcases in Mainfile.am
 
 Change `TESTCASES` inside [test/Makefile.am](https://github.com/thlorenz/multi-tap-example/blob/master/test/Makefile.am)
 to only include the test you want to run
 
-#### Make and run from command line
+#### b) Make and run from command line
 
     make test/mult && ./test/mult
