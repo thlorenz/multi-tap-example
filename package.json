@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "make check",
-    "postinstall": "clib install thlorenz/tap.c -o ./test/deps"
+    "postinstall": "clib install thlorenz/tap.c -o ./deps/tap"
   },
   "repository": {
     "type": "git",

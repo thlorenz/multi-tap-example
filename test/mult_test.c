@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
+#include "../deps/tap/tap.h"
 #include "../src/mult.h"
 
 int main(void) {
   int a, b, prod;
-  a = 1; b =1; prod = 1;
-  printf("%d * %d = %d", a, b, prod);
-  assert(mult(a, b) == prod);
+  plan(2);
+
+  ok(mult(1, 1) == 1, "1 * 1 == 1");
+  ok(mult(1, 2) == 3, "1 * 2 == 2");
   return 0;
 }

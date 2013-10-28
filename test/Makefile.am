@@ -1,7 +1,9 @@
 TESTS = add_test mult_test
 check_PROGRAMS = add_test mult_test
-add_test_SOURCES = add_test.c $(top_builddir)/src/add.h
+add_test_SOURCES = add_test.c $(top_builddir)/src/add.h $(top_builddir)/deps/tap/tap.h
 mult_test_SOURCES = mult_test.c $(top_builddir)/src/mult.h
-LDADD = ${top_builddir}/src/libmulti-calc.la
+LDADD = \
+	${top_builddir}/src/libmulti-calc.la \
+	${top_builddir}/deps/tap/libtap.la
 
 check: ${TESTS}
