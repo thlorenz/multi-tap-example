@@ -1,6 +1,5 @@
 node_modules
 deps
-test/deps
 .DS_Store
 
 # Object files

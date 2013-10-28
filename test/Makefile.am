@@ -1,6 +1,9 @@
-TESTCASES =\
-	add				\
+ALL_TESTCASES =	\
+	add						\
 	mult
+
+TESTCASES = ${ALL_TESTCASES}
+# TESTCASES = mult
 
 check_PROGRAMS = $(TESTCASES) 
 
