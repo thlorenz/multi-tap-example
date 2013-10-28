@@ -1,4 +1,4 @@
-SUBDIRS = test . src
+SUBDIRS = src test 
 dist_doc_DATA = README.md
 
 # required by libtool 

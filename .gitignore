@@ -22,6 +22,7 @@ test/deps
 *.out
 *.app
 src/multi-tap-main
+test/add_test
 
 
 # Autconf generated/intermediate/required files
@@ -56,3 +57,5 @@ libtool
 ltmain.sh
 m4
 test-driver
+*.log
+*.trs
