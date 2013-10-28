@@ -1,13 +1,10 @@
-UNIT_TESTS = 		\
-	add_test 	\
-	mult_test
+UNIT_TESTS =\
+	add				\
+	mult
 
 TESTCASES = ${UNIT_TESTS}
 
 check_PROGRAMS = $(TESTCASES) 
-
-#add_test_SOURCES = add_test.c $(top_builddir)/src/add.h
-#mult_test_SOURCES = mult_test.c $(top_builddir)/src/mult.h
 
 AM_CFLAGS = -I$(top_srcdir)/src/ -I${top_srcdir}/deps/tap/
 AM_LDFLAGS = -no-install

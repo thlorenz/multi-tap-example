@@ -22,8 +22,8 @@ test/deps
 *.out
 *.app
 src/main
-test/add_test
-test/mult_test
+test/add
+test/mult
 
 
 # Autconf generated/intermediate/required files
