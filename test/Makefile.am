@@ -1,8 +1,6 @@
-UNIT_TESTS =\
+TESTCASES =\
 	add				\
 	mult
-
-TESTCASES = ${UNIT_TESTS}
 
 check_PROGRAMS = $(TESTCASES) 
 
@@ -13,7 +11,6 @@ LDADD = 																\
 	${top_builddir}/deps/tap/libtap.la
 
 check-%: BASE=$(subst -,_,$(subst check-,,$@))
-check-%: TESTCASES=$(value $(BASE))_unit_tests)
 check-%: ${TESTCASES}
 	$(AM_V_GEN) srcdir=${srcdir} prove -e "${PROVE_ENV}" ${PROVE_OPTIONS} ${TESTCASES}
 
