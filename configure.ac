@@ -3,7 +3,7 @@ AC_INIT([multi-tap], [0.0.1], [thlorenz@gmx.de])
 
 # using foreign in order to prevent GNU standard from being enforced
 # as a result we don't have to create ChangeLog, AUTHORS and other files 
-AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+AM_INIT_AUTOMAKE([-Wall -Werror -Wno-portability foreign])
 
 # required by libtool
 AM_PROG_AR

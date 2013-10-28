@@ -21,7 +21,7 @@ test/deps
 *.exe
 *.out
 *.app
-src/multi-tap-main
+src/main
 test/add_test
 test/mult_test
 
