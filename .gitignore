@@ -48,3 +48,11 @@ depcomp
 install-sh
 missing
 stamp-*
+*.lo
+*.la
+.libs
+ar-lib
+libtool
+ltmain.sh
+m4
+test-driver

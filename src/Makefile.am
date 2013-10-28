@@ -1,2 +1,6 @@
-bin_PROGRAMS = multi-tap-main
-multi_tap_main_SOURCES = main.c add.c mult.c
+lib_LTLIBRARIES = libmulti-calc.la
+libmulti_calc_la_SOURCES = add.c add.h mult.c mult.h
+
+bin_PROGRAMS = main
+main_SOURCES = main.c
+main_LDADD = libmulti-calc.la
