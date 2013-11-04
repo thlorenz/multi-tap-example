@@ -24,8 +24,10 @@ build-test-%: $(LIB_OBJECTS) $(TAP_OBJECTS)
 test-%: build-test-%
 	test/$(subst test-,,$@)
 
-test: $(subst test/,,$(addprefix test-,$(TEST_EXECUTABLES)))
+test: $(subst test/,,$(addprefix build-test-,$(TEST_EXECUTABLES)))
 	prove -e "$(PROVE_ENV)" $(PROVE_OPTIONS) $(TEST_EXECUTABLES)
+
+testv: $(subst test/,,$(addprefix test-,$(TEST_EXECUTABLES)))
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
@@ -33,4 +35,4 @@ test: $(subst test/,,$(addprefix test-,$(TEST_EXECUTABLES)))
 clean: 
 	rm -rf $(LIB_OBJECTS) $(MAIN_OBJECTS) $(EXECUTABLE) $(TEST_OBJECTS) $(TEST_EXECUTABLES) $(TAP_OBJECTS)
 
-.PHONY: clean test
+.PHONY: clean test testv
