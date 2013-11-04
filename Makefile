@@ -18,21 +18,19 @@ EXECUTABLE=main
 $(EXECUTABLE): $(LIB_OBJECTS) $(MAIN_OBJECTS) 
 	$(CC) $(LIB_OBJECTS) $(MAIN_OBJECTS) -o $@
 
-test-%: $(LIB_OBJECTS) $(TAP_OBJECTS)
-	$(CC) test/$(subst test-,,$@).c $(LIB_OBJECTS) $(TAP_OBJECTS) -o test/$(subst test-,,$@)
+build-test-%: $(LIB_OBJECTS) $(TAP_OBJECTS)
+	$(CC) test/$(subst build-test-,,$@).c $(LIB_OBJECTS) $(TAP_OBJECTS) -o test/$(subst build-test-,,$@)
+
+test-%: build-test-%
 	test/$(subst test-,,$@)
 
 test: $(subst test/,,$(addprefix test-,$(TEST_EXECUTABLES)))
+	prove -e "$(PROVE_ENV)" $(PROVE_OPTIONS) $(TEST_EXECUTABLES)
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
 
-print:
-	@echo LIB: $(LIB)
-	@echo TEST: $(TEST)
-	@echo TAP: $(TAP)
-
 clean: 
 	rm -rf $(LIB_OBJECTS) $(MAIN_OBJECTS) $(EXECUTABLE) $(TEST_OBJECTS) $(TEST_EXECUTABLES) $(TAP_OBJECTS)
 
-.PHONY: clean print
+.PHONY: clean test
