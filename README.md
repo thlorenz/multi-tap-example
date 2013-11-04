@@ -6,39 +6,26 @@ Example of setting up a project to run multiple tap tests in one go or one by on
 
     npm install thlorenz/multi-tap-example
 
-    autoreconf --install
-
-    ./configure
-
 ## Program
 
 ### Make program
 
-    cd src && make
+    make
 
 ## Run program
 
-    ./src/multi-tap-main
+    ./main
 
 ## Tests
 
-### Make tests
+### Run all tests via prove
 
-    cd test && make
+    make test
 
-### Run tests
-
-    make check
+### Run all tests separately and more verbose output
+  
+    make testv
 
 ### Run one test only
 
-Two options to archieve that:
-    
-#### a) Change testcases in Mainfile.am
-
-Change `TESTCASES` inside [test/Makefile.am](https://github.com/thlorenz/multi-tap-example/blob/master/test/Makefile.am)
-to only include the test you want to run
-
-#### b) Make and run from command line
-
-    make test/mult && ./test/mult
+   make test-add 
