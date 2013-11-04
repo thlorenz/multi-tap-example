@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "make check",
+    "test": "make test",
     "postinstall": "clib install thlorenz/tap.c -o ./deps/tap"
   },
   "repository": {

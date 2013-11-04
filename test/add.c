@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include "../deps/tap/tap.h"
-#include "../src/add.h"
+#include "../lib/add.h"
 
 int main(void) {
   plan(3);

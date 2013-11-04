@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "add.h"
-#include "mult.h"
+#include "lib/add.h"
+#include "lib/mult.h"
 
 int main(void) {
   int a = 2;
