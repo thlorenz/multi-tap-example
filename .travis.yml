@@ -4,6 +4,5 @@ compiler:
   - clang
 
 before_install: sudo apt-get install -y libtest-differences-perl
-install: npm install && autoreconf --install && ./configure
-script: make CC=$CC check
-after_script: make uninstall
+install: npm install
+script: make CC=$CC test
