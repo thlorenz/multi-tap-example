@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
+
 #include "../deps/tap/tap.h"
-#include "../lib/mult.h"
+
+#ifdef DOTC
+#require "../lib/mult.c" as mult
+#else
+extern int mult(int, int);
+#endif
 
 int main(void) {
   int a, b, prod;

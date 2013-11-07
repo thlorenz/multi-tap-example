@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
+
 #include "../deps/tap/tap.h"
-#include "../lib/add.h"
+
+#ifdef DOTC
+#require "../lib/add.c" as add
+#else
+extern int add(int, int);
+#endif
 
 int main(void) {
   plan(3);
