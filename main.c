@@ -1,7 +1,12 @@
 #include <stdio.h>
 
-#include "lib/add.h"
-#include "lib/mult.h"
+#ifdef DOTC
+#require "./lib/add.c" as add
+#require "./lib/mult.c" as mult
+#else
+extern int add(int, int);
+extern int mult(int, int);
+#endif
 
 int main(void) {
   int a = 2;

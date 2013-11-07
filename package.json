@@ -6,8 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "make test",
-    "postinstall": "clib install thlorenz/tap.c -o ./deps/tap"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,6 @@
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (http://thlorenz.com/)",
   "license": "MIT",
   "devDependencies": {
-    "clib": "~0.1.0"
+    "dotc": "~0.3.2"
   }
 }

@@ -1,5 +1,5 @@
-CC=cc
-CFLAGS=-c -Wall
+CC=dotc
+CFLAGS= -Wall
 
 TAP=$(wildcard deps/tap/*.c)
 TAP_OBJECTS=$(TAP:.c=.o)
@@ -15,8 +15,8 @@ MAIN=main.c
 MAIN_OBJECTS=$(MAIN:.c=.o)
 EXECUTABLE=main
 
-$(EXECUTABLE): $(LIB_OBJECTS) $(MAIN_OBJECTS) 
-	$(CC) $(LIB_OBJECTS) $(MAIN_OBJECTS) -o $@
+$(EXECUTABLE): $(MAIN)
+	$(CC) $< $(CFLAGS) -o $@
 
 build-test-%: $(LIB_OBJECTS) $(TAP_OBJECTS)
 	$(CC) test/$(subst build-test-,,$@).c $(LIB_OBJECTS) $(TAP_OBJECTS) -o test/$(subst build-test-,,$@)
@@ -30,7 +30,7 @@ test: $(subst test/,,$(addprefix build-test-,$(TEST_EXECUTABLES)))
 testv: $(subst test/,,$(addprefix test-,$(TEST_EXECUTABLES)))
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $< -o $@ $(CFLAGS) 
 
 clean: 
 	rm -rf $(LIB_OBJECTS) $(MAIN_OBJECTS) $(EXECUTABLE) $(TEST_OBJECTS) $(TEST_EXECUTABLES) $(TAP_OBJECTS)
